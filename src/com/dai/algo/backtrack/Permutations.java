@@ -33,4 +33,33 @@ public class Permutations {
         }
     }
 
+    // 全排列解法2
+    public List<List<Integer>> permute2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
+        int len = nums.length;
+        boolean[] used = new boolean[len];
+        if (len == 0) {
+            return res;
+        }
+        deapSerach(nums, len, path, used, 0, res);
+        return res;
+    }
+
+    public void deapSerach(int[] nums, int len, List<Integer> path, boolean[] used, int index, List<List<Integer>> res) {
+        if (index == len) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = 0; i < len; i++) {
+            if (!used[i]) {
+                path.add(nums[i]);
+                used[i] = true;
+                deapSerach(nums, len, path, used, index + 1, res);
+                used[i] = false;
+                path.remove(index);
+            }
+        }
+    }
+
 }
