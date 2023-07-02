@@ -1,4 +1,4 @@
-package com.dai.algo.erchashu;
+package com.dai.algo.algorithm.erchashu;
 
 /**
  * 206. 反转链表

@@ -1,4 +1,4 @@
-package com.dai.algo.search;
+package com.dai.algo.algorithm.search;
 
 import java.util.ArrayList;
 import java.util.List;

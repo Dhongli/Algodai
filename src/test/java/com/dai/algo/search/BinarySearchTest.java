@@ -1,5 +1,6 @@
 package com.dai.algo.search;
 
+import com.dai.algo.algorithm.search.BinarySearch;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package com.dai.algo.erchashu;
+package com.dai.algo.algorithm.erchashu;
 
 /**
  * 斐波那契数列,后面的数是前面两个数的和

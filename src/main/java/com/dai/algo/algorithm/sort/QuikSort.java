@@ -1,4 +1,4 @@
-package com.dai.algo.sort;
+package com.dai.algo.algorithm.sort;
 
 import java.util.Arrays;
 

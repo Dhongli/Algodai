@@ -1,4 +1,4 @@
-package com.dai.algo.erchashu;
+package com.dai.algo.algorithm.erchashu;
 
 import java.util.HashMap;
 import java.util.Map;
