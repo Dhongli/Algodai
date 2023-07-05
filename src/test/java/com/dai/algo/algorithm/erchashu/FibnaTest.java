@@ -14,6 +14,6 @@ class FibnaTest {
 
     @Test
     void getFibDiguiV2() {
-        assertEquals(89, Fibna.getFibDigui(10));
+        assertEquals(89, Fibna.getFibDiguiV2(10));
     }
 }

@@ -59,7 +59,7 @@ public class Fibna {
      * @date: 2023/7/4 22:46
      */
     public static int getFibDiguiV2(int n) {
-        int[] catche = new int[n];   // 保存前n项每项的值
+        int[] catche = new int[n + 1];   // 保存前n + 1项每项的值, 从第0项开始
         Arrays.fill(catche, -1); // 数组初始值填充为-1
         catche[0] = 1;
         catche[1] = 1;
