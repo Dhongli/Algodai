@@ -3,7 +3,7 @@ package com.dai.algo.algorithm.game;
 /**
  * @author Daihongli <1215765236@qq.com>
  * @version 1.0
- * @description: TODO
+ * @description: 领扣21题，合并两个有序链表
  * @date 2023/7/8 22:52
  */
 public class LeetCode21 {
