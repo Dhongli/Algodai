@@ -30,4 +30,29 @@ public class LeetCode83 {
         }
         return head.val;
     }
+
+    /**
+     * @description: 双指针法
+     * @param: head
+     * @return: com.dai.algo.algorithm.game.ListNode
+     * @author daihongli
+     * @date: 2023/7/8 8:42
+     */
+    public ListNode deleteDuplicatesV2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode p1 = head, p2 = head.next;
+        while (p2 != null) {
+            if (p1.val == p2.val) {
+                p2.next = null;
+                p2 = p1.next;
+            } else {
+                p1 = p2;
+                p2 = p2.next;
+            }
+        }
+        return head;
+    }
+
 }
