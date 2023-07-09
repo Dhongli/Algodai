@@ -66,4 +66,35 @@ public class LeetCode234 {
         }
         return p1;
     }
+
+    /**
+     * @description: 优化，在第一个基础上，快慢指针遍历时就将前半部分反转，遍历结束后再遍历前后半段链表进行比较
+     * @param: head
+     * @return: boolean
+     * @author daihongli
+     * @date: 2023/7/9 13:32
+     */
+    public boolean isPalindromeV2(ListNode head) {
+        ListNode p1 = head, p2 = head; // 快慢指针
+        ListNode per = null, curr = head;
+        while (p2 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+            // ListNode node = curr.next;
+            curr.next = per;
+            per = curr;
+            curr = p1;
+        }
+        if (p2 != null) {
+            p1 = p1.next;
+        }
+        while (per != null) {
+            if (per.val != p1.val) {
+                return false;
+            }
+            per = per.next;
+            p1 = p1.next;
+        }
+        return true;
+    }
 }
