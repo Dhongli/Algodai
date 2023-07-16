@@ -5,7 +5,7 @@ import com.dai.algo.algorithm.game.leetModel.TreeNode;
 /**
  * @author Daihongli <1215765236@qq.com>
  * @version 1.0
- * @description: TODO
+ * @description: 引入size的环形队列，有点毛病
  * @date 2023/7/14 23:48
  */
 public class ArrayQueue2 {
