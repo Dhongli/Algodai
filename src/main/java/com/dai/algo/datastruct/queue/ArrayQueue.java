@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * @author Daihongli <1215765236@qq.com>
  * @version 1.0
- * @description: TODO
+ * @description: 数组实现队列
  * @date 2023/7/9 17:55
  */
 public class ArrayQueue<E> implements Queue<E>, Iterable<E> {
