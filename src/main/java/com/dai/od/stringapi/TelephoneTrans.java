@@ -117,13 +117,13 @@ public class TelephoneTrans {
 
     private static String transPinToYing(List<String> inputList, List<String> telList) {
 
-            for (int i = 0; i < inputList.size(); i++) {
-                telList.add(ying.get(zhong.indexOf(inputList.get(i))));
-            }
-            StringBuffer sb1 = new StringBuffer();
-            for (String s : telList) {
-                sb1.append(s);
-            }
-            return sb1.toString();
+        for (int i = 0; i < inputList.size(); i++) {
+            telList.add(ying.get(zhong.indexOf(inputList.get(i))));
+        }
+        StringBuffer sb1 = new StringBuffer();
+        for (String s : telList) {
+            sb1.append(s);
+        }
+        return sb1.toString();
     }
 }
