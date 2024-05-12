@@ -93,17 +93,14 @@ public class TelephoneTrans {
 
         // 拼音处理
         if (zhong.containsAll(inputList)) {
-            for (int i = 0; i < inputList.size(); i++) {
-                telList.add(ying.get(zhong.indexOf(inputList.get(i))));
-            }
-            StringBuffer sb1 = new StringBuffer();
-            for (String s : telList) {
-                sb1.append(s);
-            }
-            return sb1.toString();
+            return transPinToYing(inputList, telList);
         }
 
         // 英文处理
+        return transYingToPin(inputList, telList);
+    }
+
+    private static String transYingToPin(List<String> inputList, List<String> telList) {
         for (int i = 0; i < inputList.size(); i++) {
             if ("Double".equals(inputList.get(i))) {
                 inputList.set(i, inputList.get(i + 1));
@@ -116,5 +113,17 @@ public class TelephoneTrans {
             sb.append(s);
         }
         return sb.toString();
+    }
+
+    private static String transPinToYing(List<String> inputList, List<String> telList) {
+
+            for (int i = 0; i < inputList.size(); i++) {
+                telList.add(ying.get(zhong.indexOf(inputList.get(i))));
+            }
+            StringBuffer sb1 = new StringBuffer();
+            for (String s : telList) {
+                sb1.append(s);
+            }
+            return sb1.toString();
     }
 }
