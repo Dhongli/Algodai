@@ -73,9 +73,24 @@ public class TelephoneTrans {
             return "ERROR";
         }
         int chLength = input.length();
-        List<String> inputList = new ArrayList<>();
         List<String> telList = new ArrayList<>();
         // 获取到数字list
+        List<String> inputList = getInputList(input, chLength);
+
+        // 排除中英混搭，中Double混搭
+        if (!ying.containsAll(inputList) && !zhong.containsAll(inputList)) return "ERROR";
+
+        // 拼音处理
+        if (zhong.containsAll(inputList)) {
+            return transPinToYing(inputList, telList);
+        }
+
+        // 英文处理
+        return transYingToPin(inputList, telList);
+    }
+
+    private static List<String> getInputList(String input, int chLength) {
+        List<String> inputList = new ArrayList<>();
         int start = 0;
         for (int i = 0; i < chLength; i++) {
             if (Character.isUpperCase(input.charAt(i))) {
@@ -88,16 +103,7 @@ public class TelephoneTrans {
             }
         }
         System.out.println(inputList);
-
-        if (!ying.containsAll(inputList) && !zhong.containsAll(inputList)) return "ERROR";
-
-        // 拼音处理
-        if (zhong.containsAll(inputList)) {
-            return transPinToYing(inputList, telList);
-        }
-
-        // 英文处理
-        return transYingToPin(inputList, telList);
+        return inputList;
     }
 
     private static String transYingToPin(List<String> inputList, List<String> telList) {
